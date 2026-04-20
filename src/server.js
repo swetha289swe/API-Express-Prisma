@@ -2,6 +2,8 @@
 import express from "express";
 import {config} from "dotenv";
 import { connectDB,disconnectDB } from "./config/db.js";
+//CORS Errror
+import cors from "cors";
 // IMPORT ROUTES
 import movieRoutes from "./routes/movieRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
@@ -11,7 +13,13 @@ config();
 connectDB();
 
 const app = express();
-
+//cors
+app.use(cors({
+    origin: 'http://localhost:5173', // Replace with your React app's URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true // Allow cookies/sessions if needed
+  }));
 //body parse middleware
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));  ///automatically parse data from an html form submission that u can access in the req body

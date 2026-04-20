@@ -21,5 +21,10 @@ npx prisma migrate dev --name added_constraint
 
 openssl rand -base64 32  ---> creates a random guidID
 
+package for validating request
+eg:express validator,ZOD(popular in market)
+npm i zod
+
+
 
 
