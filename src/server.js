@@ -38,11 +38,15 @@ app.get('/home',(req,res)=>{
     res.json({message:'Hello'})
 })
 
+//Added this line as i have to deploy in vercel
+export default app;
 
 const port = 3000;
+if (process.env.NODE_ENV !== 'production') {
 const server = app.listen(port,()=>{
     console.log("Port runs in http://localhost:"+port)
 })
+}
 
 
 process.on("unhandledRejection",(err)=>{
