@@ -15,7 +15,7 @@ connectDB();
 const app = express();
 //cors
 app.use(cors({
-    origin: ['http://localhost:5173','https://api-express-prisma.vercel.app'], // Replace with your React app's URL
+    origin: ['http://localhost:5173','https://movies-world-brown-five.vercel.app'], // Replace with your React app's URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true // Allow cookies/sessions if needed
